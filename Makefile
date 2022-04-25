@@ -7,9 +7,9 @@
 
 CC		=	gcc
 
-SRC		=	src/main.c
+SRC		=	main.c \
 
-BIN		=	bin
+BIN		=	change_commands
 
 OBJ		=	$(SRC:.c=.o)
 
