@@ -7,10 +7,14 @@
 
 CC		=	gcc
 
-SRC		=	start.c \
-			update_game.c \
-			update_menu.c \
+SRC		=	src/start.c \
+			src/update_game.c \
+			src/update_menu.c \
 			lib/create_object.c \
+			src/check_collision.c \
+			src/hover_actions.c \
+			src/update_settings.c \
+			src/process_change_commands.c \
 
 BIN		=	change_commands
 
