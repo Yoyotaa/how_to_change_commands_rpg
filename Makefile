@@ -7,7 +7,7 @@
 
 CC		=	gcc
 
-SRC		=	main.c \
+SRC		=	start.c \
 			update_game.c \
 			update_menu.c \
 			lib/create_object.c \
