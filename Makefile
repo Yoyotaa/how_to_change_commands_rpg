@@ -8,6 +8,9 @@
 CC		=	gcc
 
 SRC		=	main.c \
+			update_game.c \
+			update_menu.c \
+			lib/create_object.c \
 
 BIN		=	change_commands
 
@@ -15,20 +18,18 @@ OBJ		=	$(SRC:.c=.o)
 
 CFLAGS	=	-I./includes
 
-WFLAGS	=	-W -Werror -Wall -Wextra
+LFLAGS	=	-lcsfml-graphics -lcsfml-window -lcsfml-system -lcsfml-audio
 
-TFLAGS	=	-lcriterion
+WFLAGS	=	-W -Werror -Wall -Wextra
 
 LPATH	=	-C lib/my
 
 all:	mylib $(OBJ)
-		$(CC) $(OBJ) -o $(BIN) -L./lib/my -lmy
+		$(CC) $(OBJ) -o $(BIN) $(LFLAGS) -L./lib/my -lmy
+		make clean
 
 mylib:
 		make $(LPATH)
-
-w:		mylib $(OBJ)
-		$(CC) $(OBJ) -o $(BIN) $(WFLAGS) -L./lib/my -lmy
 
 clean:
 		make clean $(LPATH)
@@ -38,4 +39,4 @@ fclean:	clean
 		make fclean $(LPATH)
 		rm -f $(BIN)
 
-re:		fclean all
+re:		fclean all clean
