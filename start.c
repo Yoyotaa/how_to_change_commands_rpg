@@ -7,12 +7,26 @@
 
 #include "rpg.h"
 
+void check_event(game_t *game)
+{
+    sfEvent event;
+
+    while (sfRenderWindow_pollEvent(game->window, &event)) {
+        game->event = event;
+        if (game->event.type == sfEvtClosed)
+            sfRenderWindow_close(game->window);
+        if (game->event.type == sfEvtKeyPressed && game->event.key.code == sfKeyEscape)
+            sfRenderWindow_close(game->window);
+    }
+}
+
 //main loop
 void process_app(game_t *game)
 {
-    while(sfRenderWindow_isOpen(game->window)) {
+    while (sfRenderWindow_isOpen(game->window)) {
+        check_event(game);
         sfRenderWindow_clear(game->window, sfBlack);
-
+        
         //Update the current scene once per frame (function pointer)
         game->mode(game);
 
@@ -21,7 +35,7 @@ void process_app(game_t *game)
 }
 
 //Initialise the application
-void start()
+void start(void)
 {
     game_t *game = malloc(sizeof(game_t));
     sfVideoMode mode = {1920, 1080, 32};
@@ -36,7 +50,7 @@ void start()
     game->green_button = create_object("sprites/green_button.png", vec(660, 600), create_rect(0, 0, 600, 200));
 
     // Loading the scene
-    game->mode = &update_game;
+    game->mode = &update_menu;
     process_app(game);
 }
 
