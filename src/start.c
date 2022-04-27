@@ -42,12 +42,7 @@ void process_app(game_t *game)
 //Initialise the commands_t
 void init_commands(game_t *game)
 {
-    game->commands = malloc(sizeof(command_t));
-
-    game->commands->up = sfKeyUp;
-    game->commands->down = sfKeyDown;
-    game->commands->left = sfKeyLeft;
-    game->commands->right = sfKeyRight;
+    // INIT THE COMMANDS
 }
 
 //Initialise the application

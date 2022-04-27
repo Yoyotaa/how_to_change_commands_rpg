@@ -16,16 +16,16 @@ The goal is that the inputs rely on the keys stored in your structure
 */
 void move_player(game_t *game)
 {
-    if (sfKeyboard_isKeyPressed(game->commands->up)) {
+    if (sfKeyboard_isKeyPressed(sfKeyUp)) {
         game->player->pos.y -= 5;
     }
-    if (sfKeyboard_isKeyPressed(game->commands->right)) {
+    if (sfKeyboard_isKeyPressed(sfKeyRight)) {
         game->player->pos.x += 5;
     }
-    if (sfKeyboard_isKeyPressed(game->commands->down)) {
+    if (sfKeyboard_isKeyPressed(sfKeyDown)) {
         game->player->pos.y += 5;
     }
-    if (sfKeyboard_isKeyPressed(game->commands->left)) {
+    if (sfKeyboard_isKeyPressed(sfKeyLeft)) {
         game->player->pos.x -= 5;
     }
     sfSprite_setPosition(game->player->sprite, game->player->pos);

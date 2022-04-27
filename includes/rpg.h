@@ -37,10 +37,6 @@ typedef struct object {
 
 //structure commands
 typedef struct commands {
-    int up;
-    int down;
-    int left;
-    int right;
     char *to_change;
 } command_t;
 

@@ -7,16 +7,11 @@
 
 #include "rpg.h"
 
-void new_c(game_t *game)
+void assign_command(game_t *game)
 {
-    if (my_strcmp(game->commands->to_change, "up") == 0)
-        game->commands->up = game->event.key.code;
-    if (my_strcmp(game->commands->to_change, "down") == 0)
-        game->commands->down = game->event.key.code;
-    if (my_strcmp(game->commands->to_change, "left") == 0)
-        game->commands->left = game->event.key.code;
-    if (my_strcmp(game->commands->to_change, "right") == 0)
-        game->commands->right = game->event.key.code;
+    // if (my_strcmp(game->commands->to_change, "up") == 0)
+    
+
 }
 
 int menu_change(game_t *game)
@@ -26,7 +21,7 @@ int menu_change(game_t *game)
     while (sfRenderWindow_pollEvent(game->window, &event)) {
         game->event = event;
         if (game->event.type == sfEvtKeyPressed) {
-            new_c(game);
+            assign_command(game);
             game->mode = &update_settings;
         }
     }
