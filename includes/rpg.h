@@ -28,7 +28,7 @@ typedef struct text {
 
 //game object
 typedef struct object {
-    char *name;
+    char *name; // NOM DE L'OBJET !!!
     sfTexture *texture;
     sfSprite *sprite;
     sfVector2f pos;

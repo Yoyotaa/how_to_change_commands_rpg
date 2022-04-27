@@ -9,7 +9,7 @@
 
 void move_player(game_t *game)
 {
-    /* [STEP 4]
+    /* [STEP 3]
         Now that you created your commands structure,
 
         You have to modify this function to link the player movement to it:

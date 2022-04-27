@@ -9,10 +9,8 @@
 
 void change_commands(game_t *game, char *command_to_change)
 {
-    // init the string "to_change" in the struc commands, and assign him "command_to_change"
-
-    /* [STEP ?]
-        Assign "command_to_change" in the to_change variable (from your structure)
+    /* [STEP 4.b]
+        Assign commands->to_change with "command_to_change"
 
         Then, change the scene (game->mode) to &process_change_commands
     */
@@ -21,7 +19,11 @@ void change_commands(game_t *game, char *command_to_change)
 int menu_check_commands(game_t *game, object_t *button)
 {
     if (left_click(game->event) == 1) {
-        //call the change_commands function
+        /* [STEP 4.a]
+            Call the change_commands function, with the proper parameters !
+
+            Tips : You should send the name of the button to "change_commands"
+        */
     }
     return (0);
 }
@@ -30,7 +32,7 @@ text_t *init_text(game_t *game)
 {
     text_t *text = malloc(sizeof(text_t));
 
-    /* [STEP ?]
+    /* [STEP 6]
         initialise the text structure with init_font (exmaple below)
     */
 

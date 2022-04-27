@@ -9,6 +9,9 @@
 
 void assign_command(game_t *game)
 {
+    /* [STEP 5]
+
+    */
     // if (my_strcmp(game->commands->to_change, "up") == 0)
 }
 
