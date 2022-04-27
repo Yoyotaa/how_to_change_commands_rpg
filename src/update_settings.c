@@ -10,6 +10,12 @@
 void change_commands(game_t *game, char *command_to_change)
 {
     // init the string "to_change" in the struc commands, and assign him "command_to_change"
+
+    /* [STEP ?]
+        Assign "command_to_change" in the to_change variable (from your structure)
+
+        Then, change the scene (game->mode) to &process_change_commands
+    */
 }
 
 int menu_check_commands(game_t *game, object_t *button)
@@ -22,11 +28,15 @@ int menu_check_commands(game_t *game, object_t *button)
 
 text_t *init_text(game_t *game)
 {
-    //text_t *text = malloc(sizeof(text_t));
+    text_t *text = malloc(sizeof(text_t));
 
-//    text->text_up = init_font(game->commands->up, game->up->pos, game->up->rect);
+    /* [STEP ?]
+        initialise the text structure with init_font (exmaple below)
+    */
 
-    //return (text);
+    //text->text_up = init_font(game->commands->up, game->up->pos, game->up->rect);
+
+    return (text);
 }
 
 void draw_font(text_t *text, sfRenderWindow *window)
@@ -40,7 +50,7 @@ void draw_font(text_t *text, sfRenderWindow *window)
 
 void update_settings(game_t *game)
 {
-    //init_text
+    //initialise the text structure
     sfRenderWindow_drawSprite(game->window, game->up->sprite, NULL);
     sfRenderWindow_drawSprite(game->window, game->down->sprite, NULL);
     sfRenderWindow_drawSprite(game->window, game->left->sprite, NULL);
@@ -49,5 +59,5 @@ void update_settings(game_t *game)
     over_button(game->window, game, game->down, &menu_check_commands);
     over_button(game->window, game, game->left, &menu_check_commands);
     over_button(game->window, game, game->right, &menu_check_commands);
-    //draw_text
+    //draw the font
 }

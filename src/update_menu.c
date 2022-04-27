@@ -10,9 +10,9 @@
 int menu_buttons(game_t *game, object_t *button)
 {
     if (left_click(game->event) == 1) {
-        if (my_strcmp(button->name, "play") == 0)
+        if (strcmp(button->name, "play") == 0)
             game->mode = &update_game;
-        if (my_strcmp(button->name, "settings") == 0)
+        if (strcmp(button->name, "settings") == 0)
             game->mode = &update_settings;
     }
     return (0);

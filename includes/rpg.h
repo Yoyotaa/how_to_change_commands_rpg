@@ -5,7 +5,7 @@
 ** global header
 */
 
-#include "libmy.h"
+#include <string.h>
 #include <SFML/Graphics.h>
 #include <SFML/System.h>
 #include <SFML/Audio.h>
@@ -37,6 +37,10 @@ typedef struct object {
 
 //structure commands
 typedef struct commands {
+    /* [STEP 1]
+        Add a new sfKey for each direction (up, down, left, right)
+        These objects will be initialised in "init_commands"
+    */
     char *to_change;
 } command_t;
 

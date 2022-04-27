@@ -1,8 +1,8 @@
 /*
 ** EPITECH PROJECT, 2022
-** 
+**
 ** File description:
-** 
+**
 */
 
 #include "rpg.h"
@@ -10,8 +10,6 @@
 void assign_command(game_t *game)
 {
     // if (my_strcmp(game->commands->to_change, "up") == 0)
-    
-
 }
 
 int menu_change(game_t *game)

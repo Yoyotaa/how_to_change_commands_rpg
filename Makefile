@@ -10,12 +10,11 @@ CC		=	gcc
 SRC		=	src/start.c \
 			src/update_game.c \
 			src/update_menu.c \
-			lib/create_object.c \
-			src/check_collision.c \
-			src/hover_actions.c \
 			src/update_settings.c \
 			src/process_change_commands.c \
-			src/init_font.c \
+			src/engine/create_object.c \
+			src/engine/init_font.c \
+			src/engine/input_manager.c \
 
 BIN		=	change_commands
 
@@ -25,23 +24,14 @@ CFLAGS	=	-I./includes
 
 LFLAGS	=	-lcsfml-graphics -lcsfml-window -lcsfml-system -lcsfml-audio
 
-WFLAGS	=	-W -Werror -Wall -Wextra
-
-LPATH	=	-C lib/my
-
-all:	mylib $(OBJ)
-		$(CC) $(OBJ) -o $(BIN) $(LFLAGS) -L./lib/my -lmy
+all:	$(OBJ)
+		$(CC) $(OBJ) -o $(BIN) $(LFLAGS)
 		make clean
 
-mylib:
-		make $(LPATH)
-
 clean:
-		make clean $(LPATH)
 		rm -f $(OBJ)
 
 fclean:	clean
-		make fclean $(LPATH)
 		rm -f $(BIN)
 
 re:		fclean all clean

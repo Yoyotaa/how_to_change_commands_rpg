@@ -7,15 +7,15 @@
 
 #include "rpg.h"
 
-/*
-If you already created your "commands" structure,
-
-You have to modify this function to link the player movement to it:
-
-The goal is that the inputs rely on the keys stored in your structure
-*/
 void move_player(game_t *game)
 {
+    /* [STEP 4]
+        Now that you created your commands structure,
+
+        You have to modify this function to link the player movement to it:
+
+        The goal is that the inputs rely on the keys stored in your structure (instead of a specific key)
+    */
     if (sfKeyboard_isKeyPressed(sfKeyUp)) {
         game->player->pos.y -= 5;
     }
