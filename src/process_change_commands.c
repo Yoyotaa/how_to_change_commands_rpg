@@ -12,7 +12,7 @@ void assign_command(game_t *game)
     /* [STEP 5]
 
     */
-    // if (my_strcmp(game->commands->to_change, "up") == 0)
+    // if (strcmp(game->commands->to_change, "up") == 0)
 }
 
 int menu_change(game_t *game)
