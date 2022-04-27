@@ -18,6 +18,14 @@ typedef struct touch {
     sfFloatRect sprite_size;
 } touch_t;
 
+//structure text
+typedef struct text {
+    sfText *text_up;
+    sfText *text_down;
+    sfText *text_left;
+    sfText *text_right;
+} text_t;
+
 //game object
 typedef struct object {
     char *name;
@@ -63,3 +71,4 @@ int over_button(sfRenderWindow *window, game_t *game, object_t *button, int (*fu
 int menu_buttons(game_t *game, object_t *button);
 void update_settings(game_t *game);
 void process_change_commands(game_t *game);
+sfText *init_font(char command, sfVector2f v, sfIntRect rect);

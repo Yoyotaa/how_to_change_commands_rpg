@@ -15,6 +15,7 @@ SRC		=	src/start.c \
 			src/hover_actions.c \
 			src/update_settings.c \
 			src/process_change_commands.c \
+			src/init_font.c \
 
 BIN		=	change_commands
 
