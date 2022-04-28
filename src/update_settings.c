@@ -32,7 +32,7 @@ text_t *init_text(game_t *game)
 {
     text_t *text = malloc(sizeof(text_t));
 
-    /* [STEP 6]
+    /* [STEP 6] (1)
         initialise the text structure with init_font (exmaple below)
     */
 
@@ -52,7 +52,7 @@ void draw_font(text_t *text, sfRenderWindow *window)
 
 void update_settings(game_t *game)
 {
-    //initialise the text structure
+    // [STEP 6] (2) initialise the text structure
     sfRenderWindow_drawSprite(game->window, game->up->sprite, NULL);
     sfRenderWindow_drawSprite(game->window, game->down->sprite, NULL);
     sfRenderWindow_drawSprite(game->window, game->left->sprite, NULL);
@@ -61,5 +61,5 @@ void update_settings(game_t *game)
     over_button(game->window, game, game->down, &menu_check_commands);
     over_button(game->window, game, game->left, &menu_check_commands);
     over_button(game->window, game, game->right, &menu_check_commands);
-    //draw the font
+    // [STEP 6] (3) draw the font (command above)
 }
