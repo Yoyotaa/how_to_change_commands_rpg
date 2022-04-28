@@ -28,6 +28,11 @@ void move_player(game_t *game)
     if (sfKeyboard_isKeyPressed(sfKeyLeft)) {
         game->player->pos.x -= 5;
     }
+    // Reset the position if the player leaves the screen
+    game->player->pos.x = (game->player->pos.x > 1920) ? -70 : game->player->pos.x;
+    game->player->pos.x = (game->player->pos.x < -70) ? 1920 : game->player->pos.x;
+    game->player->pos.y = (game->player->pos.y > 1080) ? -70 : game->player->pos.y;
+    game->player->pos.y = (game->player->pos.y < -70) ? 1080 : game->player->pos.y;
     sfSprite_setPosition(game->player->sprite, game->player->pos);
 }
 
